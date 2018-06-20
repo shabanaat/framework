@@ -1,10 +1,4 @@
-node {
-stage("composer_install") {
-        // Run `composer update` as a shell script
-        sh 'composer install'
+node{
+   stage('Checkout') {
+        checkout scm
     }
-    stage("phpunit") {
-        // Run PHPUnit
-        sh 'vendor/bin/phpunit'
-    }
-}
